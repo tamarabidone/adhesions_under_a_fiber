@@ -5,9 +5,13 @@ Outputs are percentage of ligated integrins, Integrin-ligand bond lifetimes and 
 
 
 The inputs can be changed in the Mechanosensing_3DApp.java file
-The outputs are generated from the same file, in the second part of the step() function
+The outputs are generated from the print_output.java file
 
-Mechanosensing_3DApp.java contains the main(). It first initializes positions of integrins and ligands in the domain; then performs code iteration throug the step( function)
-The step() function, fist applies parallel force on itegrins and displaces them, second it applies substrate force and displaces them one more time.
-At the end of the step() function integrin states are updated (ligand-bound or unligated)
+Mechanosensing_2DApp.java contains:
+initialize()
+main()
+
+It first initializes positions of integrins and ligands in the domain; then performs code iteration throug the step function
+The step() function, applies force on itegrins and displaces them. Forces result from thermal effects, substrate stiffness (when integrins are bound to a ligand), and actomyosin contractility (when integrins are ligated under the fiber region.
+At the end of the step() function, displacements are computed and integrin states are updated (ligand-bound or unligated)
 
