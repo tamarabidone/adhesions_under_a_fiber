@@ -1,0 +1,38 @@
+# Configuration file
+---
+
+simulation:
+  domain_dimensions:
+    x_min: -0.5
+    x_max: 0.5
+    y_min: -0.5
+    y_max: 0.5
+  temperature : 300 
+# K
+  timestep    : 0.0001 
+# s
+  nIntegrins  : 100
+  nLigands    : 441
+  total-time  : 300 
+# s
+
+integrin:
+  friction   : 0.071 
+# pN s/nm
+  k_on       : 1 
+# s^-1
+
+substrate:
+  spring  : 0.4
+# pN/nm
+
+actin-fiber:
+  width    : 0.2 
+# nm
+  bundling : 0.5 
+# probability between 0-1
+
+myosin:
+  force  : 5
+# pN
+

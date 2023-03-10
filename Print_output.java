@@ -9,12 +9,14 @@ public class Print_output{
 	ArrayList<Integrin_2D> sIntegrin = new ArrayList<Integrin_2D>();
 	ArrayList<Ligand_2D> sLigand = new ArrayList<Ligand_2D>();
 	int nOfIntegrins,nOfLigands;
+	double timestep;
 
-	public Print_output(ArrayList<Integrin_2D> sIntegrin,  ArrayList<Ligand_2D> sLigand, int nOfIntegrins, int nOfLigands){
+	public Print_output(ArrayList<Integrin_2D> sIntegrin,  ArrayList<Ligand_2D> sLigand, int nOfIntegrins, int nOfLigands, double timestep){
 		this.sIntegrin= sIntegrin;
 		this.sLigand= sLigand;
 		this.nOfIntegrins = nOfIntegrins;	
 		this.nOfLigands = nOfLigands;	
+		this.timestep=timestep;
 	}
 
 		/////This is for output files////
@@ -29,20 +31,19 @@ public class Print_output{
 		}
 		
 
-	
-
-		String l2 =  "B_ST_pos_T_" +sIntegrin.get(0).Pbundling+"__"+ sIntegrin.get(0).MyoForce + "_Integrin_"
+		String l2 =  "T1_"+timestep+"_" +sIntegrin.get(0).Pbundling+"__"+ sIntegrin.get(0).MyoForce + "_Integrin_"
 				+ sIntegrin.get(0).V * 1E3 + "_v_" + sLigand.get(0).k;
-		String l3 =  "B_ST_finalTension_T_"+"_"+ "_"  +sIntegrin.get(0).Pbundling+"__"+  sIntegrin.get(0).MyoForce+ "_IntegrinFinals_"
+		String l3 =  "T1_finalTension_"+timestep+"_"+"_"+ "_"  +sIntegrin.get(0).Pbundling+"__"+  sIntegrin.get(0).MyoForce+ "_IntegrinFinals_"
 				+ sIntegrin.get(0).V * 1E3 + "_v_" + sLigand.get(0).k;
-		String ld ="B__ST_T_"+"_Bound_" +  "_"+ "_"  +sIntegrin.get(0).Pbundling+"__"+  sIntegrin.get(0).MyoForce + "_L_"
+		String ld ="T1__"+timestep+"_"+"_Bound_" +  "_"+ "_"  +sIntegrin.get(0).Pbundling+"__"+  sIntegrin.get(0).MyoForce + "_L_"
 				+ sIntegrin.get(0).V * 1E3 + "_v_" + sLigand.get(0).k ;
-		String l4 = "B_ST_T_kon_"+"General_"  +"_"+"_" + "_"+sIntegrin.get(0).Pbundling+"__"+  sIntegrin.get(0).MyoForce + "_L_"
+		String l4 = "T1_"+timestep+"_kon_"+"General_"  +"_"+"_" + "_"+sIntegrin.get(0).Pbundling+"__"+  sIntegrin.get(0).MyoForce + "_L_"
 				+ sIntegrin.get(0).V * 1E3 + "_v_" + sLigand.get(0).k;
 
 //// Saving output files every second
-		if (sIntegrin.get(0).time % 1 < 0.0001) {
+		if (sIntegrin.get(0).time % 1 < timestep) {
 			{
+				//System.out.println(sLigand.get(0).k);
 				try {
 					FileWriter fw2 = new FileWriter(l2, true);
 					FileWriter fw3 = new FileWriter(l3, true);

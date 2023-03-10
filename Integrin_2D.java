@@ -53,7 +53,6 @@ public class Integrin_2D{
 			  } 
 			  else 
 			  {
-				  zetaI = 0.0142*5;
 				  kon=1; 
 			  }
 			 
@@ -64,7 +63,8 @@ public class Integrin_2D{
 			
 			kon=1;
 			
-			  if(Bead_Position[1]<0.15 && Bead_Position[1]>-0.15) {
+			  if(Bead_Position[1]<0.15 && Bead_Position[1]>-0.15) 
+			  {
 			  
 				  Myo_Force_Update(); 
 			  }

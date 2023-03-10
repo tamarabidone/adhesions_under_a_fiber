@@ -18,7 +18,7 @@ public class Force_Interaction{
 		for(int i=0;i<nOfIntegrins;i++){		
 			double r_min=10000;
 		    double k_it=sLigand.get(0).k;
-			
+	
 			if (sIntegrin.get(i).BoundLigandYN==1){
 				int lig1=sIntegrin.get(i).LigandNum;
 				double rr=distance(sIntegrin.get(i).Bead_Position,sLigand.get(lig1).Bead_PositionL);
@@ -76,7 +76,8 @@ protected void CatchBond(){
 		  sIntegrin.get(sLigand.get(i).integrinBoundNum).FinalLife=0;
 				 	 P=(sIntegrin.get(sLigand.get(i).integrinBoundNum).kub*sLigand.get(i).dt);
 		 	sIntegrin.get(sLigand.get(i).integrinBoundNum).contaAT=sIntegrin.get(sLigand.get(i).integrinBoundNum).contaAT+1;
-		 	if (Math.random()<P ){	
+		 	if (Math.random()<P )
+		 	{	
 		 		sLigand.get(i).BoundYN=0;
 		 		sIntegrin.get(sLigand.get(i).integrinBoundNum).finalTension=sLigand.get(i).FF_interact;
 		 		sLigand.get(i).FF_interact=0;
