@@ -4,7 +4,7 @@ Input variables are myosin force and probability of actin bundling.
 Outputs are percentage of ligated integrins, Integrin-ligand bond lifetimes and adhesion orientation
 
 
-The inputs can be changed in the Mechanosensing_3DApp.java file
+The inputs can be changed in the config file, whihc needs to be in the same directory of the prohram
 The outputs are generated from the print_output.java file
 
 Mechanosensing_2DApp.java contains:
